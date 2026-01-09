@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Quick Resume Maker</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  padding: 20px;
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.box {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+}
+input, textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+h2 {
+  margin-bottom: 10px;
+}
+.resume {
+  line-height: 1.6;
+}
+button {
+  padding: 10px;
+  width: 100%;
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1 style="text-align:center;">Quick Resume Maker</h1>
+
+<div class="container">
+
+  <div class="box">
+    <h2>Enter Details</h2>
+    <input type="text" id="name" placeholder="Your Name">
+    <textarea id="skills" placeholder="Skills"></textarea>
+    <textarea id="experience" placeholder="Experience"></textarea>
+    <button onclick="generate()">Generate Resume</button>
+  </div>
+
+  <div class="box resume" id="resume">
+    <h2>Your Resume</h2>
+    <p><b>Name:</b> <span id="rname"></span></p>
+    <p><b>Skills:</b> <span id="rskills"></span></p>
+    <p><b>Experience:</b> <span id="rexperience"></span></p>
+  </div>
+
+</div>
+
+<script>
+function generate() {
+  document.getElementById("rname").innerText =
+    document.getElementById("name").value;
+  document.getElementById("rskills").innerText =
+    document.getElementById("skills").value;
+  document.getElementById("rexperience").innerText =
+    document.getElementById("experience").value;
+}
+</script>
+
+</body>
+</html>
